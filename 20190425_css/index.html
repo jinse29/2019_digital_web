@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<style>
+		img[src$="png"]{border:3px solid red;}
+		img[src$="jpg"]{border:2px solid blue;}
+	</style>
+</head>
+<body>
+	<img src="phone1.png" alt=""><br>
+	<img src="phone2.png" alt=""><br>
+	<img src="view01.jpg" alt="">
+    
+    <style>
+    	div>h1{color:red;}
+    	div h1{color:blue;}
+    	
+    	div>h2{color:skyblue;}
+    	div h2{color:gray;}
+        
+        div>ul>li{color:orange;}
+    	div li{color:orange;}
+    </style>
+	<div>
+		<ul>
+			<h1>abc</h1>
+			<h2>def</h2>
+			<li>Lorem ipsum.</li>
+			<li>Officia, totam!</li>
+			<li>Veritatis, voluptatibus!</li>
+		</ul>
+	</div>
+	<!-- (h1>{header})+(h2>{header}) -->
+	  <style>
+	  	h1~h2{color:blue;}
+	  	h2:hover{color:white; 
+	  		background-color:black;cursor:pointer;}
+	  	h2:active{background-color:red;}
+	  	input:focus{background-color:skyblue;}	
+	  </style>
+    <h1>header1</h1>
+    <h2>header2</h2>
+    <h2>header3</h2>
+    <h2>header4</h2>
+    <h2>header5</h2>
+    <form>
+    	<input type="text">
+    	<input type="text">
+    </form>
+    <!-- ul.child>li*5>{menu$} -->
+    <!-- ul.child>li*5 -->
+    <style>
+    	/*ul>li:first-child{background-color:red;}*/
+    	/*ul>li:last-child{background-color:skyblue;}*/
+    	ul>li:nth-child(2n){background-color:red;}
+    	ul>li:nth-child(2n+1){background-color:blue;}
+    	.red{background-color:red;}
+    	ul.child>li{list-style:none; padding:0 15px;margin:0px; 
+    		float:left; color:white;}
+    	ul.child>li:first-child{border-radius:10px 0 0 10px;}	
+    	ul.child>li:last-child{border-radius:0 10px 10px 0;}	
+    </style>
+    <ul class="child">
+    	<li>menu1</li>
+    	<li>menu2</li>
+    	<li>menu3</li>
+    	<li>menu4</li>
+    	<li>menu5</li>
+    </ul>
+</body>
+</html>
