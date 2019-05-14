@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>css</title>
+	<style>
+		ul>li:first-child{color:red;}
+		ul>li:last-child{color:blue;}
+		ul>li:nth-child(2n){background-color:skyblue;}
+		ul>li:nth-child(2n+1){background-color:orange;}
+		a:visited{color:black;}
+		a:link{color:black;}
+        a:visited,
+        a:link{color:black;}
+		a{text-decoration:none;}
+	</style>
+</head>
+<body>
+	<!-- ul>li*7>{menu$} -->
+	<ul>
+		<li>menu1</li>
+		<li>menu2</li>
+		<li>menu3</li>
+		<li>menu4</li>
+		<li>menu5</li>
+		<li>menu6</li>
+		<li>menu7</li>
+	</ul>
+	<a href="http://www.naver.com">네이버</a><br>
+	<a href="http://bxslider.com">bxslider</a><br>
+	<a href="http://www.gabia.co.kr">가비아</a>
+ <style>
+ 	div>h1{color:red;}
+ 	div h1{color:red;}
+ 	h1{color:red;}
+    
+    div>ul>li>h1{color:red;}
+ 	ul>li>h1
+ 	li>h1
+ </style>
+
+ <div>
+ 	<h1>1</h1>
+ 	<h2>2</h2>
+ 	<ul class="menu">
+ 		<li>3</li>
+ 		<li>3</li>
+ 		<li>3</li>
+ 	</ul>
+ </div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+@charset "utf-8";
+*{margin:0; padding:0; box-sizing:border-box;}
+li{list-style:none;}
+a:link, a:visited{}
+a{text-decoration:none;}
+.clearfix:after{content:""; clear:both; display:block;}
+div#main_header{width: 960px; height: 140px; background-color: green; margin:0 auto; margin-bottom:10px;}
+h1.logo{width: 150px; height: 140px; text-align:center; background-color:red; float:left;}
+div.util_menu{width: 400px; height: 40px; background-color: purple; float:right; margin-bottom:20px;}
+div.util_menu>ul>li>a{display:block;}
+div.Main_menu{width: 500px; height:40px; background-color: gray; float:right;} 
+div.Main_menu>ul>li>a{display:block;}
+div#content{width: 960px; height: 500px; background-color:white; margin:0 auto; margin-bottom:20px;}
+div.main_section{width: 750px; height: 500px; background-color: skyblue; float:left;}
+div.aside{width: 200px; height: 500px; background-color: yellow; float:left; margin-left:10px;}
