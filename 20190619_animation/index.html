@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>animation</title>
+	<style>
+		.box{width: 100px;height: 100px;
+			 background-color:#f00;
+			 animation:boxmove 2s linear; 
+			 bottom:0px;border-radius:50px;
+			 position: absolute;
+			}
+			@keyframes boxmove{
+               0%{left:0;}
+               50%{left:300px;}
+               100%{left:0;}
+			}
+
+			.box01{width: 200px;height: 10px;
+				background-color:blue;
+                animation:lines 2s linear;
+			}
+			@keyframes lines{
+				from{width: 0;}
+				to{width: 200px;}
+			}
+			.box02{width:0;height: 10px;
+			       background-color:skyblue;
+			       animation:lines 2s linear;
+			       animation-delay:2s;
+			       animation-fill-mode:forwards;
+			       position: absolute;left:200px;top:8px;
+			}
+			@keyframes lines{
+				from{width: 0;}
+				to{width: 200px;}
+			}
+			.button{width: 200px;height: 40px;line-height: 40px;
+				background-color: orange; text-align:center;}
+				.bar{width: 200px;height:5px;
+					position: absolute;
+					bottom:0;background-color: #f00;
+				    animation:btnBar 0.8s;
+				    animation-play-state:paused;}
+			@keyframes btnBar{
+				from{width: 0;}
+				to{width: 200px;}
+			}	
+			.button:hover .bar{
+				animation-play-state:running;
+			}
+			.button1{width: 200px;height: 40px;background-color:skyblue;
+			        line-height:40px;text-align:center;position: relative;}
+			.bar1{width: 0px;height: 5px;
+			     background-color: #f00;
+			     position: absolute;
+			     transition:0.3s;
+			     bottom:0;}
+			.button:hover .bar1{width: 200px;}
+
+			.button2{width: 200px;height: 40px;background-color:skyblue;
+			        line-height:40px;text-align:center;position: relative;}
+			.bar2{width: 200px;height: 5px;
+			     background-color: #f00;
+			     position: absolute;
+			     transition:0.3s;
+			     bottom:0;transform:scaleX(0);}
+			.button:hover .bar2{transform:scaleX(1);}
+				
+	</style>
+  <style>
+  	.text_wrapper{text-align: center;width: 800px;height: 500px;background-color: skyblue; position: relative;}
+  	.text_wrapper h2{
+  		width: 100%;
+  		position: absolute;top:50%;
+  		transform:translateY(-50%);
+  		font-size:40px;
+  	}
+  	.text_wrapper h2 span{
+  		display:inline-block;
+  		animation-name:tani;
+  		animation-duration:0.3s;
+  		animation-fill-mode:forwards;
+  		opacity:0;
+  	}
+  	.text_wrapper h2 span:nth-child(2){animation-delay:0.2s;}
+  	.text_wrapper h2 span:nth-child(3){animation-delay:0.4s;}
+  	.text_wrapper h2 span:nth-child(4){animation-delay:0.6s;}
+  	.text_wrapper h2 span:nth-child(5){animation-delay:0.8s;}
+  	@keyframes tani{
+  		from{transform:translate(50px,-50px) rotate(-360deg);scale(3)}
+  		to{transform:translate(0)rotate(0);opacity:1;scale(1)}
+  	}
+  </style>
+</head>
+<body>
+	<div class="box"></div>
+	<div class="box01"></div>
+	<div class="box02"></div>
+
+	<div class="button">
+	<div class="bar"></div>
+    </div>
+
+	<div class="button1">
+	<div class="bar1"></div>
+    </div>
+
+    <div class="button2">
+	<div class="bar2"></div>
+    </div>
+     
+     <div class="text_wrapper">
+       <h2>
+       	<span>n</span>
+       	<span>e</span>
+       	<span>v</span>
+       	<span>e</span>
+       	<span>r</span>
+       </h2>
+     </div>
+</body>
+</html>

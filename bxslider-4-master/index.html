@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/jquery.bxslider.css">
+	<script src="jquery/jquery-3.1.1.min.js"></script>
+	<script src="jquery/jquery.bxslider.js"></script>
+    <script>
+    	$(document).ready(function(){
+    		$('.slider').bxSlider();
+    	});
+    </script>
+    <style>
+    	img{width: 800px; height: 400px;}
+    	.wrap{width: 500px; height: 300px;}
+    </style>
+</head>
+<body>
+	<div class="wrap">
+		<ul class="slider">
+		<li><img src="dist/images/building1.jpg" alt="빌딩"></li>
+		<li><img src="dist/images/building2.jpg" alt="건물"></li>
+		<li><img src="dist/images/building3.jpg" alt="주택"></li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>sprite</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<style>
+		div.icon_wrap{}
+		div.icon_wrap .btn{ float:left;
+			width: 30px; height: 30px;
+			background-image:url(../images/icon-sprite.png); 
+		    text-indent:-1000px; cursor:pointer;		
+		}
+		div.icon_wrap .item01{background-position:0 -330px;transition:0
+			.3s;}
+		div.icon_wrap .item02{background-position:-40px -330px;transition:0.3s;}
+		div.icon_wrap .item03{background-position:-80px -330px;transition:0
+			.3s;}
+		div.icon_wrap .item04{background-position:-120px -330px;transition:0.3s;}	
+		div.icon_wrap .item05{background-position:-160px -330px;transition:0.3s;}
+		div.icon_wrap .item01:hover{background-position:0 -360px;}
+		div.icon_wrap .item02:hover{background-position:-40px -360px;}
+		div.icon_wrap .item03:hover{background-position:-80px -360px;}
+		div.icon_wrap .item04:hover{background-position:-120px -360px;}
+		div.icon_wrap .item05:hover{background-position:-160px -360px;}
+
+		div.icon_wrap .item02.active{background-position:-40px -360px;}
+         
+        .btn_wrap .btn_image01{background-image:url(../images/icon-sprite.png);background-position:-200px -450px;}
+        .btn_wrap .btn_image02{background-image:url(../images/icon-sprite.png);background-position:-200px -450px;}
+        .btn_wrap .btn_image03{background-image:url(../images/icon-sprite.png);background-position:-200px -450px;}
+        .btn_wrap .btn_image04{background-image:url(../images/icon-sprite.png);background-position:-200px -450px;}
+  
+       ul.sns_wrap>li{
+       	width: 30px; height: 30px;
+       	background-image:url(../images/icon-sprite.png); 
+        text-indent:-10000px; float:left;  opacity:1; 
+       	transition:0.3s;
+       	margin-right:10px;
+       }
+       ul.sns_wrap>li:nth-child(1){background-position:-200px -450px; opacity:1; 
+       	transition:0.3s;}
+       ul.sns_wrap>li:nth-child(2){background-position:-240px -450px;}
+       ul.sns_wrap>li:nth-child(3){background-position:-280px -450px;}
+
+       ul.sns_wrap>li:hover{opacity:0.3;}
+       ul.sns_wrap a{display:block; line-height:30px;}
+       nav#gnb div.menu item01{width: 140px; height: 50px; background-color:skyblue; text-align:center;}
+ 	</style>
+</head>
+<body>
+	<div class="icon_wrap clearfix">
+		<div class="btn item01">icon</div>
+		<div class="btn item02 active">icon</div>
+		<div class="btn item03">icon</div>
+		<div class="btn item04">icon</div>
+		<div class="btn item05">icon</div>
+	</div>	
+    <ul class="sns_wrap clearfix">
+    	<li><a href="http://www.fb.com">페이스북</a></li>
+    	<li><a href="http://www.youtube.com">유투브</a></li>
+    	<li><a href="http://www.twiter.com">트위터</a></li>
+    </ul>
+
+    <nav id="gnb">
+    	<div class="menu item01"><a href="#">지역</a></div>
+    	<div class="menu item02"><a href="#">쇼핑</a></div>
+    	<div class="menu item03 active"><a href="#">문화</a></div>
+    	<div class="menu item04"><a href="#">여행</a></div>
+    	<div class="menu item05"><a href="#">레저</a></div>
+    	<div class="menu item06"><a href="#">추천</a></div>
+    	<div class="menu item06"><a href="#">전체보기</a></div>
+    </nav>
+</body>
+</html>

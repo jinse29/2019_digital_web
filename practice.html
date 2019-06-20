@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<link rel="stylesheet" href="../css/reset.css">
+    <style>
+    @charset "utf-8";
+    *{margin:0; padding:0; box-sizing:border-box;}
+    li{list-style:none;}
+    a:link, a:visited{}
+    a{text-decoration:none;}
+    .clearfix:after{content:"";clear:both;display:block;}
+
+    	#header{width: 600px; height: 100px; 
+    		    background-color: pink; margin:0 auto;}
+    	.util_menu{width: 400px;height: 200px;float:left;}
+      .gnb_menu{width: 1000px;margin:0 auto;}
+      .gnb_menu>ul{position: relative;}
+      .gnb_menu>ul>li{float:left;width:20%;
+        background-color:skyblue;}
+      .gnb_menu>ul>li>a{display:block;line-height:40px;
+        text-align:center;}
+      .gnb_menu>ul>li:hover{background-color:green;}
+     
+
+    	.slide{width: 1200px;height: 400px;
+    		background-color: green; margin:0 auto; margin-top:30px;}
+        .box01{width: 360px; height: 220px;
+        	   background-color:red; float:left; margin-left:30px; display:block;}
+        .box02{width: 360px;height: 220px; margin-left:30px;
+        	   background-color:blue;float:left;}
+        .box03{width: 360px;height: 220px;float:left;
+               background-color:orange; margin-left:30px;}
+        .article{width: 1200px;height: 400px;background-color:white; margin:0 auto; margin-top:30px;}
+    </style>
+</head>
+<body>
+	<div id="header">
+		<div class="util_menu"></div>
+	</div>
+  <div class="gnb_menu">
+  	   <ul>
+  	   	<li><a href="#">HOME</a></li>
+  	   	<li><a href="#">ABOUT</a></li>
+  	   	<li><a href="#">STYLE</a></li>
+  	   	<li><a href="#">POST</a></li>
+  	   	<li><a href="#">CAMP</a></li>
+  	   </ul>
+    </div>
+  <div class="slide"></div>
+   <div class="article">
+   	<div class="box01"></div>
+    <div class="box02"></div>
+    <div class="box03"></div>
+   </div>
+ 
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>배열객체</title>
+	<script>
+		var arrdata=[];
+		function insertArr(){
+			for(var i=0;i<=99;i++){
+				arrdata[i]=i+1;
+			}
+			selectArr();
+		}
+		function selectArr(){
+            for(var i=0;i<arrdata.length;i++){
+            	document.write(arrdata[i]+ ", ");
+            }
+		    addArr();
+		};
+        function addArr(){
+        	var sum=0;
+        	for(var i=0;i<arrdata.length;i++){
+        		sum += arrdata[i];
+        	}
+        	document.write("<p>" + sum + "<p>");
+        }
+		
+	</script>
+</head>
+<body>
+	<button type="button" onclick="insertArr()">배열생성</button>
+	<script>
+		var kdata=['서울','부산','청주','대구'];
+		function printArr(item,index){
+			document.write("배열데이터 ["+ index + "] :" + item
+				+ "<br>")
+		}
+
+		kdata.forEach(printArr);
+	</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>Array</title>
+	<script>
+		var city = ["Seoul",,"Busan",,"Incheon"];
+
+        // var city = [];
+        // city[0] = "Seoul";
+        // city[1] = "Busan";
+        // city[2] = "Incheon";
+        // city[3] = "Mokpo";
+
+		function printArr(){
+			
+			for(var i=0;i<city.length;i++){ //city.length... city의 개수
+			document.write("배열데이터 ["+i+"] :" + city[i]+"<br>");
+		  }
+		//printArr(); //함수호출
+		}
+	</script>
+	<script>
+		
+		var com = [95,85,,50,35,44,90,100,70,85];
+		var getAvg;
+
+		function printAvg(){
+		var sum = 0;
+		var n = com.length;
+        //alert(n);
+
+		for(var i=0;i<n;i++){
+          if(com[i] == undefined) continue;
+          sum+= com[i];
+		}
+        
+        document.write(sum);
+        return (sum / n);
+       
+      }
+		 getAvg = printAvg();
+		 document.write("평균은 : " + getAvg+ "점입니다.");
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
