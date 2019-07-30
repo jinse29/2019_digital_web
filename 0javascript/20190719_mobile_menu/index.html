@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../../css/reset.css">
+	<title>mobile slide menu</title>
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<style>
+		@media all and (min-width:961px){
+		body{min-width:1260px;}
+		#main_header{height: 1950px;position: relative;margin-bottom:100px;}
+		#header_top{
+			width:1260px;height: 50px;
+			position: absolute;left:50%;margin-left:-630px;top:40px;
+			z-index:1;
+			}
+		#header_top > h1{float: left;color:white;}
+		#header_top > #main_menu{float: right;}
+		#main_menu ul li{float: left;}
+
+
+		#main_menu ul li a{display: block;color:white;line-height:50px;padding:0 30px;font-weight:bold;}
+
+
+		#main_menu ul li a:after{
+			content:"";display: block;width:10%;height: 2px;
+			background-color:yellow;transition:0.3s;margin:0 auto;
+
+		}
+		#main_menu ul li a:hover:after{width:100%;}
+
+
+
+		#header_top > .toggleMenu{
+			float: right;width:50px;height:50px;position: relative;
+			cursor:pointer;z-index:1;display:none;}
+		
+		div.toggleMenu{width: 50px;height: 50px;position: relative;
+			border: 1px solid #ccc;cursor:pointer;z-index:1;}
+		div.toggleMenu div{
+			width: 35px;height: 5px;background-color: #000;
+		    position: absolute;border-radius:3px;left:7px;
+		    transition:0.3s;
+		}
+		.bar1{top:11px;}
+		.bar2{top:21px;}
+		.bar3{top:31px;}
+		.change .bar1{transform:rotate(-45deg);top:21px;
+			          background-color: #fff;}
+		.change .bar2{opacity:0;}
+		.change .bar3{transform:rotate(45deg);top:21px;
+		             background-color: #fff;}
+		.menuView{position: fixed;width: 100%;height: 100%;
+			      background-color: pink;top:0;top:-100%;}
+	</style>
+	<script>
+		$(document).ready(function(){
+			$(".toggleMenu").click(function(){
+				var myClass = $(this).attr("class");
+				console.log(myClass);
+				if(myClass == "toggleMenu"){
+					$(this).addClass("change");
+					$(".menuView").stop().animate({top:0},300)
+				}else{
+					$(this).removeClass("change");
+					$(".menuView").stop().animate({top:"-100%"},300)
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<header id="main_header">
+	<div id="header_top" class="clearfix">
+		<h1>LOGO</h1>
+		<nav id="main_menu">
+			<ul class="clearfix">
+				<li><a href="#">회사소개</a></li>
+				<li><a href="#">윤리경영</a></li>
+				<li><a href="#">제품/기술</a></li>
+				<li><a href="#">지속가능성</a></li>
+				<li><a href="#">홍보채널</a></li>
+				<li><a href="#">인재채용</a></li>
+			</ul>
+		</nav>
+	<div class="toggleMenu">
+		<div class="bar1"></div>
+		<div class="bar2"></div>
+		<div class="bar3"></div>
+	</div>
+	<div class="menuView">test</div>
+</body>
+</html>

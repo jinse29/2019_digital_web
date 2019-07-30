@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<style>
+		img{float:left;}
+		.context_wrap{width: 800px;height: 36px;margin:0 auto; background-color: white;}
+		.notice{width: 465px;height: 36px;float:left;background-color: black;}
+		.notice li{width: 100px;height: 36px;float:left;color:white;font-weight:bold;text-align:center;line-height:30px;}
+		.cars1{width: 800px;height: 80px;background-color: white;margin:0 auto;}
+		.cars2{width: 800px;height: 80px;background-color: white;margin:0 auto;}
+		.cars3{width: 800px;height: 80px;background-color: white;margin:0 auto;}
+		.cars4{width: 800px;height: 80px;background-color: white;margin:0 auto;}
+		.notice li.action{background-color: #fff;color:black;}
+	</style>
+	<script>
+		$(document).ready(function(){
+    		$(".div_wrap>div").hide();
+    		$(".div_wrap>div").eq(0).show();
+            
+            var sCount = $(".div_wrap div").eq(0).find("img").length;
+            console.log(sCount);
+            $(".sCount").html(sCount);
+   
+    		$(".notice>li").click(function(){
+            var i = $(this).index();
+             $(".notice>li").removeClass();
+             $(this).addClass("action");
+            $(".div_wrap > div").hide();
+    		$(".div_wrap > div").eq(i).show();
+            
+            sCount = $(".div_wrap div").eq(i).find("img").length;
+            console.log(sCount);
+            $(".sCount").html(sCount);
+    		}); 
+		});
+	</script>
+</head>
+<body>
+	<div class="context_wrap">
+	<img src="images/tab_logo.jpg" alt="">
+	<ul class="notice clearfix">
+		<li class="action">승용</li>
+		<li>견적</li>
+		<li>상담</li>
+		<li>이벤트</li>
+	</ul>
+  </div>
+  <div class="div_wrap">
+  	<div class="cars1">
+  		    <img src="images/car1_01.gif" alt="차량1">
+  			<img src="images/car1_02.gif" alt="차량2">
+  			<img src="images/car1_03.gif" alt="차량3">
+  			<img src="images/car1_04.gif" alt="차량4">
+  			<img src="images/car1_05.gif" alt="차량5">
+  			<img src="images/car1_06.gif" alt="차량6">
+  	</div>
+  	<div class="cars2">
+  		<img src="images/consult_01.gif" alt="">
+  		<img src="images/consult_02.gif" alt="">
+  		<img src="images/consult_03.gif" alt="">
+  		<img src="images/consult_04.gif" alt="">
+  	</div>
+  	<div class="cars3">
+  		<img src="images/estimate_01.gif" alt="">
+  		<img src="images/estimate_02.gif" alt="">
+  		<img src="images/estimate_03.gif" alt="">
+  		<img src="images/estimate_04.gif" alt="">
+  	</div>
+  	<div class="cars4">
+  		<img src="images/event_01.gif" alt="">
+  		<img src="images/event_02.gif" alt="">
+  	</div>
+  </div>
+<div class="sCount"></div>
+</body>
+</html>

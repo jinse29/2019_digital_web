@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>event</title>
+
+</head>
+<body onload=''>
+	
+	<form>
+		이름<input type="text" name="myname" id="name" onblur="checkF(this)">
+        <br>
+        나이<input type="text">
+	</form>
+     <script>
+		
+        
+		window.onload = function(){
+         document.getElementById("name").focus();
+		};
+        function checkF(obj){
+        	if(obj.value == ""){
+        		alert("이름을 입력하세요");
+        		obj.focus()
+        	}
+        }
+        document.getElementById("name").onclick = click;
+        function click(){
+
+        };
+
+	</script>         
+</body>
+</html>

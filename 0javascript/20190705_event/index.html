@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+</head>
+<body>
+     <h3>마우스 관련 이벤트 리스너</h3>
+	<hr>
+	<div>
+		<span onmousedown="down(this)"
+			  onmouseup="up(this)"
+			  onmouseover="over(this)"
+              onmouseout="out(this)"
+              onwheel="wheel(event,this)">
+		</span>
+	</div>
+	<script>
+	    var width=1;
+		function down(obj){
+            obj.style.fontStyle = "italic";
+		}
+        function up(obj){
+        	obj.style.fontStyle = "normal";
+        }
+        function over(obj){
+        	obj.style.borderColor = "violet";
+        }
+        function out(obj){
+            obj.style.borderColor = "lightgreen";    
+        }
+        function wheel(e,obj){
+        	if(e.wheelData<0){
+        		width--;
+        	if(width<0) width=0;
+        }
+        else
+        	width++;
+         obj.style.borderStyle = "solid"
+         obj.style.borderWidth = width + "px";
+        }
+	</script>
+</body>
+</html>

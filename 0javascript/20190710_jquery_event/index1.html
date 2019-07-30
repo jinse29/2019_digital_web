@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<script src="../js/jquery-3.3.1.min.js"></script>
+	<style>
+		.menuwrap{width: 300px;height: 80px;background-color:white;}
+		.tabmenu {width: 200px;height: 80px;background-color:white;}
+		.tabmenu ul li{width: 150px;height: 80px;float:left;
+			           display:block;background-color: orange;line-height:20px;text-align:center;}	           
+	</style>
+	<script>
+		$(document).ready(function(){
+          $(".boxwrap > div").hide();
+           $(".boxwrap > div").eq(0).show();
+           $(".menuwrap > ul > li").click(function(){
+            var liNum = $(this).index()
+           	console.log(liNum);
+           	$(".menuwarp > ul > li").removeClass();
+           	$(this).addClass("active");
+           	$(".boxwrap > div").hide();
+           	$(".boxwrap > div").eq(liNum).show();
+           });
+	</script>
+</head>
+<body>
+	<div id="menuwrap">
+		<div class="tabmenu">
+			<ul>
+				<li>공항예약</li>
+				<li>호텔예약</li>
+				<li>렌트카</li>
+				<li>휴양지</li>
+			</ul>
+		</div>
+	</div>
+	<div class="boxwrap">
+     <div class="box1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas autem, aliquam qui minima repellendus similique veritatis fugiat in dolorum quis.</div>	
+     <div class="box2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates fugiat sit alias tenetur libero, in iste dolore quos distinctio aliquam.</div>	
+     <div class="box3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque illum fuga maxime nesciunt omnis magnam sed asperiores accusamus consectetur tempore!</div>	
+     <div class="box4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni ipsa optio nihil cumque reprehenderit hic incidunt cupiditate nobis saepe obcaecati.</div>	
+	</div>
+	<form action="#" class="polo">
+		<ul>
+			<li>
+				<label for="golo">가고싶은 나라를 선택하세요</label>
+				<select name="nara" id="scnara">
+					<option value="">선택하세요</option>
+					<option value="미국">미국</option>
+					<option value="일본">일본</option>
+					<option value="중국">중국</option>
+				</select> 
+			</li>
+		 <li class="onframe">
+		 	<div class="aleft">
+		 		<label for="edate">출발일</label>
+		 		<input type="date" id="edate">
+		 	</div>
+		 	<div class="aright">
+		 		<label for="sdate">도착일</label>
+		 		<input type="date" id="sdate">
+		 	</div>
+		 </li>
+	</form>
+</body>
+</html>

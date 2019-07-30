@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<style>
+		.content_wrap{width: 1000px; margin:0 auto;}
+		.content_wrap ul{width: 1000px;}
+		.content_wrap ul li{width: 200px;height: 40px;text-align:center;border-radius:15px 15px 0 0;line-height:25px;
+		                    float:left;background-color:lightgray;}
+		.content_wrap ul li:hover{background-color: lightblue;cursor:pointer;}
+		.content_type li.lime {background-color: skyblue;}
+		.content_txt{width: 1000px;height: 300px;background-color: gray;}
+	</style>
+    <script>
+    	$(document).ready(function(){
+    		$(".content_txt>div").hide();
+    		$(".content_txt>div").eq(0).show();
+    		$(".content_type>li").click(function(){
+             var i = $(this).index();
+             $(".content_type>li").removeClass();
+             $(this).addClass("lime");
+            $(".content_txt>div").hide();
+    		$(".content_txt>div").eq(i).show(); 
+    		});
+
+    	});
+    </script>
+</head>
+<body>
+	<div class="content_wrap">
+		<ul class="content_type clearfix">
+			<li class="lime">Today</li>
+			<li>Story</li>
+			<li>Life</li>
+			<li>Twitter</li>
+			<li>Game</li>
+		</ul>
+	<div class="content_txt">
+	<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto molestiae ipsum error non est eligendi voluptatem, quisquam aliquam, tempore vitae.</div>
+	<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam optio blanditiis rerum natus quas esse deserunt aut! Provident, id, earum.</div>
+	<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, accusamus cum. Veritatis repellat adipisci atque saepe earum et provident laborum.</div>
+	<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam iste, tempore tenetur! Quod officia sunt itaque repudiandae error unde eveniet!</div>
+	<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, dignissimos aliquam nihil sequi dicta praesentium. Culpa esse repellendus, nihil beatae!</div>
+	</div>
+</div>
+</body>
+</html>

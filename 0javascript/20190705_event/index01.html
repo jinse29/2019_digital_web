@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+    <style>
+    	#div{background:skyblue;
+    	     width:250px;}
+    </style>
+</head>
+<body>
+	<img src="../../images/testimg.jpg" alt="img01"
+	onmousemove="where(event)">
+	<div id="div"></div>
+	<script>
+		var div = document.getElementById("div")
+		function where(e){
+			var text="(screenX,screenY)=" + e.screenX + "," + e.screenY + "<br>";
+			text+="(clientX,clientY)=" + e.clientX + "," + e.clientY + "<br>";
+			text+="(offsetX,offsetY)=" + e.offsetX + "," + e.offsetY + "<br>";
+			text+= "(x,y)=" + e.x + "," + e.y
+			div.innerHTML = text;
+		}
+	</script>
+</body>
+</html>
