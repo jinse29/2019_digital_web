@@ -15,17 +15,29 @@
 				menu:"#topMenu",
 				navigation:true,
 				slidesNavigation:true,
+				//autoScrolling: false,
 				navigationPosition:'right',
 				navigationTooltips:["menu1","menu2","menu3","menu4"],
 				afterLoad:function(anchorslink,index){
-                  console.log("anchor:"+anchorslink+",index:"+index);
-				if(index == 2){
-                   $("#onView").addClass("move");
-               }else{
-                   $("#onView").removeClass("move"); 
-				  }
+					console.log("anchor:"+anchorslink+", index:"+index);
+					if(index ==2){
+						$("#onView").addClass("move");
+					}else{
+						$("#onView").removeClass("move");
+					}
+					if(index ==3){
+						$("#onView3").addClass("move");
+					}else{
+						$("#onView3").removeClass("move");
+					}
+				},
+				afterRender: function () {
+			        //on page load, start the slideshow
+			         slideTimeout = setInterval(function () {
+			                $.fn.fullpage.moveSlideRight();
+			            }, 3000);
+			    },
 				
-				}
 			});
 		});
 	</script>
@@ -52,7 +64,7 @@
                }
         .main a:hover{background-color: #fff;color:#000;}        
         #navTop{position:fixed; height: 50px; width: 100%; 
-        	    background-color: #cdcdcd;z-index:1;padding-left:20px;}
+        	    background-color: #fff;z-index:1;padding-left:20px;}
         #navTop li{float:left;}
         #navTop li a{display:block;text-align:center;line-height:50px;padding: 0 10px;}
         #navTop li.active{background-color: #f00;}
@@ -60,12 +72,23 @@
         .right{right:30px;}
         #onView{position: absolute;transition:0.3s;opacity:0;top:20%;}
         #onView.move{opacity:1;top:50%;}
-
+        #onView3{left:10%;opacity:0;transition:0.3s;}
+		#onView3.move{left:50%;opacity:1;}
+		.scroll{position: absolute;bottom:20px;left:50%;transform:translateX(-50%);
+			animation-name:xScroll;
+			animation-duration:0.8s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+		}
+		@keyframes xScroll{
+			from{bottom:20px;}
+			to{bottom:40px;}
+		}
         .slide{position: relative;}
         .slide .sView1,
         .slide .sView2{position:absolute;width: 1024px;height: 500px;left:50%;transform:translate(-50%,-50%);}
-        .sView1{background-color: #f00;}
-        .sView2{background-color: #0f0;}
+        _.sView1{background-color: #f00;}
+        _.sView2{background-color: #0f0;}
 	</style>
 </head>
 <body>
@@ -85,6 +108,8 @@
 				<p>Lorem ipsum dolor sit.</p>
 				<a href="#">more</a>
 			</div>
+			<div class="scroll"><a href="#1st"><img src="images/btn_scroll.png" alt=""></a></div>
+
 		</div>
 		<div class="section page" id="page2" data-anchor="2st">
 			<div class="main" id="onView">
@@ -92,13 +117,16 @@
 				<p>Lorem ipsum dolor sit.</p>
 				<a href="#">more</a>
 			</div>
+			<div class="scroll"><a href="#2st"><img src="images/btn_scroll.png" alt=""></a></div>
 		</div>
+
 		<div class="section page" id="page3" data-anchor="3st">
 			<div class="main">
 				<h3>Lorem ipsum.</h3>
 				<p>Lorem ipsum dolor sit.</p>
 				<a href="#">more</a>
 			</div>
+			<div class="scroll"><a href="#3st"><img src="images/btn_scroll.png" alt=""></a></div>
 		</div>
 		<div class="section page" id="page4" data-anchor="4st">
 			<div class="main">
