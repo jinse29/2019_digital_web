@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<script src="../../js/jquery-3.3.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			function move(){
+				$(".box").animate({marginLeft:200},1000)
+			.animate({marginTop:200},1000)
+			.queue(function(){
+				$(".box").css({"background-color":"red"});
+				$(".box").dequeue();
+			})
+			.animate({marginLeft:0},1000)
+			.animate({marginTop:0},1000)
+			.queue(function(){
+				$(".box").css({"background-color":"aqua"});
+				$(".box").dequeue();
+			});
+
+		  } 
+			//setInterval(move,4000);
+			//move();
+            function move1(){
+			
+
+			$(".box01")
+			.animate({left:470},1000)
+			.animate({top:470},1000)
+			.queue(function(){
+				$(this).css({background:"red"});
+				$(this).dequeue();
+			})
+			.animate({left:0},1000)
+			.animate({top:0},1000)
+			.queue(function(){
+				$(this).css({background:"black"});
+				$(this).dequeue();
+             })
+           }
+           $(".btn").click(function(){
+           	  move1();
+           });
+		});
+	</script>
+	<style>
+		.box{
+			width: 50px;text-align: center;
+			background-color: aqua;
+		}
+		.boxWrap{width: 500px;height: 500px;margin:0 auto;
+			background-color: skyblue;position: relative;
+		}
+		.box01{
+			width: 30px;height: 30px;border-radius:15px;
+			background-color: #000;position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">내용</div>
+	<button class="btn">움직이기</button>
+	<div class="boxWrap">
+		<div class="box01"></div>
+	</div>
+</body>
+</html>

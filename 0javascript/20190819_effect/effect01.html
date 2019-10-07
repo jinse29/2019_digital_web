@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="UTF-8">
+	<title>문서 제목</title>
+	<link rel="stylesheet" href="../../css/reset.css">
+	<script src="../js/jquery-3.3.1.min.js"></script>
+
+</head>
+  <style>
+	.content{width: 400px;background-color: #eee;}
+  </style>
+  <script>
+	  $(document).ready(function(){
+		 $(".btn2").hide();
+		 $(".btn1").click(function(){
+		 $(".box").slideUp(1000,"swing";
+		          function(){
+                  $(".btn1").hide();
+                  $(".btn2").show();
+                  //alert("sildeDown되었습니다.")
+             }                     
+ 		        });
+		 });
+
+		 $(".btn3").click(function(){
+		 	$(".box").slideDown(1000,"linear",function(){
+                $(".btn1").show();
+                $(".btn2").hide();
+                //alert("sildeDown되었습니다.")
+                 });
+		 });
+		 $(".btn2").click(function(){
+             $(".box").fadeIn(1000,"swing",
+             	function(){
+                   $(".btn1").show();
+                   $(".btn2").hide();
+             	});
+		 });
+		 $(".btn4").click(function(){
+		 	// $(".box").slideToggle();
+		 	$(".box").toggle();
+		 });
+
+		 $(".btn5").click(function(){
+		 	$(".box")fadeTo(1000,0.3);
+         });
+		 $(".btn5").click(function(){
+		 	$(".box")fadeTo(1000,1);
+		 });	
+  </script>
+<body>
+    <div>
+    	<button class="btn1">slideUp</button>
+    	<button class="btn2">fadeIn</button>
+    	<!-- <button class="btn3">slideDown</button> -->
+    </div>
+    <div class="box">
+    	<div>
+    		<button class="btn4">slideToggle</button>
+    	</div>
+    	<div>
+    		<button class="btn5">fadeTo 0.3</button>
+    		<button class="btn6">fadeTo 1</button>
+    	</div>
+    		<div class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, hic voluptate incidunt fugiat architecto doloremque! Repudiandae neque numquam, itaque illo voluptate debitis a, magnam maxime perferendis dicta animi voluptatem in, cum ea aut magni beatae quis, assumenda commodi vel delectus? Sit, est cumque iure soluta modi a dicta perferendis eius, asperiores molestiae tempora corporis voluptatem animi eos assumenda ut esse vel suscipit quam aliquam omnis iusto quisquam! Deserunt soluta cum ab necessitatibus dolore ipsam ullam fugiat rerum a alias aliquam, numquam adipisci vitae ad sequi blanditiis dignissimos quas dicta autem delectus tempora praesentium expedita. In perferendis tempore laudantium impedit provident.</div>
+    	</div>
+    <div style="height: 400px;background-color: #f00"></div>	
+</body>
+</html>
